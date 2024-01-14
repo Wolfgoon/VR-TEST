@@ -5,11 +5,20 @@
   </head>
   <body>
     <a-scene>
-      <a-box position="-1.176 0.5 -2.715" rotation="0 27.5 0" color="#4CC3D9"></a-box>
-      <a-box position="-2.096 0.5 -2.042" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-box position="0 0.5 -3" rotation="0 0 0" color="#4CC3D9"></a-box>
-      <a-plane position="0 0 -2" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      <a-assets>
+        <a-assets-item id="bob" src="MODELS/Bob.glb"></a-assets-item>
+        <a-assets-item id="oct" src="MODELS/oct2.glb"></a-assets-item>
+      </a-assets>
+      
+      <!-- Plane and Sky -->
+      <a-plane position="0 0 0" rotation="-90 0 0" width="4" height="4" color="#a7adb1"></a-plane>
       <a-sky color="#ECECEC"></a-sky>
+      
+      <!-- Animated 'bob' object -->
+      <a-entity id="bobEntity" gltf-model="#bob" position="0 0.35 -1" animation="property: rotation; to: 720 720 720; loop: true; dur: 5000;"></a-entity>
+      
+      <!-- Static 'oct' object -->
+      <a-entity gltf-model="#oct" position="2.1 0 -1.2" scale="0.1 0.1 0.1"></a-entity>
     </a-scene>
   </body>
 </html>
