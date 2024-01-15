@@ -5,14 +5,18 @@
   </head>
   <body>
     <a-scene>
+      <a-entity camera="" position="0 3.6 1" wasd-controls="" rotation="" look-controls="" aframe-injected="" data-aframe-inspector-original-camera=""></a-entity>
       <a-assets>
-        <a-assets-item id="board" src="MODELS/board.glb"></a-assets-item>
+        <a-asset-item id="board" src="MODELS/board.glb"></a-asset-item>
       </a-assets>
       <!-- Plane and Sky -->
       <a-sky color="#ECECEC"></a-sky>
+      <!-- Directional Light -->
+      <a-light type="directional" color="#FFF" intensity="1.5" position="-1 5 5"></a-light>
+      <a-light type="directional" color="#FFF" intensity="1.5" position="-1 5 -5"></a-light>
       <!-- Static 'oct' object -->
-      <a-entity gltf-model="#board" position="2.1 0 -1.2" scale="0.1 0.1 0.1"></a-entity>
-      
+      <a-entity gltf-model="#board" position="-3.464 0 -3" scale="0.1 0.1 0.1"></a-entity>
+      <a-sky color="black"></a-sky>
     </a-scene>
   </body>
 </html>
