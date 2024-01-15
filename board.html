@@ -2,20 +2,31 @@
 <html>
   <head>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="js/play-on-click.js"></script>
   </head>
   <body>
     <a-scene>
       <a-assets>
         <a-asset-item id="board" src="MODELS/board.glb"></a-asset-item>
+        <video id="camera" src="img/170300 (1080p).mp4" autoplay loop="true" muted width="2.85" height="2.82"></video>
+        <video id="cup" src="img/running_sushi_-_3625 (540p).mp4" autoplay loop="true" muted width="2.85" height="2.82"></video>
       </a-assets>
       <!-- Plane and Sky -->
-      <a-sky color="#ECECEC"></a-sky>
-      <!-- Directional Light -->
-      <a-light type="directional" color="#FFF" intensity="1.5" position="-1 5 5"></a-light>
-      <a-light type="directional" color="#FFF" intensity="1.5" position="-1 5 -5"></a-light>
-      <!-- Static 'oct' object -->
-      <a-entity gltf-model="#board" position="-3.464 -2.45 -4" scale="0.1 0.1 0.1"></a-entity>
-      <a-sky color="black"></a-sky>
+<a-sky color="#ECECEC"></a-sky>
+<!-- Directional Light -->
+<a-light type="directional" color="#FFF" intensity="1.5" position="-1 5 5"></a-light>
+<a-light type="directional" color="#FFF" intensity="1.5" position="-1 5 -5"></a-light>
+<!-- Static 'oct' object -->
+<a-entity gltf-model="#board" position="-3.464 -2.45 -4" scale="0.1 0.1 0.1"></a-entity>
+<a-sky color="black"></a-sky>
+      <a-entity material="shader: flat; src: #camera"
+                geometry="primitive: plane; width: 2.85; height: 2.82;"
+                position="-0.4858 1.265 -6.5383"
+                play-on-click
+                visible="true">
+      </a-entity>
+      <a-videosphere src="#cup" play-on-click></a-videosphere>
     </a-scene>
   </body>
 </html>
+
